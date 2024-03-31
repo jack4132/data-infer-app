@@ -20,11 +20,11 @@ This project is a web application developed using **Django** on the backend and 
 - **SQLite** (Database)
 
 ## Setup Instructions
-1. Clone the repository: `git clone <repository-url>`
+1. Clone the repository: `git clone https://github.com/jack4132/data-infer-app.git`
 2. Navigate to the backend directory: `cd backend`
 3. Install Python dependencies: `pip install -r requirements.txt`
-4. Apply database migrations: `python manage.py migrate`
-5. Start the Django server: `python manage.py runserver`
+4. Apply database migrations: `python3 manage.py migrate`
+5. Start the Django server: `python3 manage.py runserver`
 6. Navigate to the frontend directory: `cd frontend`
 7. Install Node.js dependencies: `npm install`
 8. Start the React development server: `npm start`
