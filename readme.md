@@ -17,7 +17,7 @@ This project is a web application developed using **Django** on the backend and 
 - **Material-UI** (UI components library)
 - **Papaparse** (CSV parser)
 - **Django REST Framework** (API framework for Django)
-- **PostgreSQL** (Database)
+- **SQLite** (Database)
 
 ## Setup Instructions
 1. Clone the repository: `git clone <repository-url>`
