@@ -1,0 +1,6 @@
+Name,Birthdate,Score,Grade,pass
+Alice,01/01/1990,8+1i,A,TRUE
+Bob,02/02/1991,9+8i,B,FALSE
+Charlie,03/03/1992,7+2i,A,TRUE
+David,04/04/1993,5+2i,B,TRUE
+Eve,05/05/1994,4+3i,A,FALSE
