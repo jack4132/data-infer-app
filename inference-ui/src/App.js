@@ -9,6 +9,7 @@ import BasicSelect from "./Components/DropDown";
 import Button from "@mui/material/Button";
 import Alert from "@mui/material/Alert";
 import CloseIcon from "@mui/icons-material/Close";
+import NoteAddIcon from "@mui/icons-material/NoteAdd";
 
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
@@ -213,13 +214,30 @@ function App() {
           ref={inputRef}
         />
       </div>
-
+      {!values?.length && (
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "80vh",
+          }}
+        >
+          <NoteAddIcon
+            fontSize="large"
+            style={{cursor: "pointer"}}
+            onClick={() => inputRef.current.click()}
+          />
+          <p>Upload file to show</p>
+        </div>
+      )}
       <Paper sx={{width: "100%", overflow: "hidden"}}>
         <TableContainer sx={{maxHeight: "80vh"}}>
           <Table stickyHeader aria-label="sticky table">
             <TableHead>
               <TableRow>
-                {tableRows.map(column => (
+                {tableRows?.map(column => (
                   <TableCell
                     key={column}
                     align={"right"}
@@ -230,29 +248,26 @@ function App() {
                 ))}
               </TableRow>
               <TableRow>
-                {/* <TableCell> */}
-                {values?.length &&
-                  values[values.length - 1].map((val1, index1) => (
-                    <TableCell style={{borderTop: "none"}}>
-                      <BasicSelect
-                        selectedValue={getUserFriendlyDataType(val1)}
-                        values={dataTypeMapping}
-                        handleChange={handleInput}
-                        index={index1}
-                        dataConversion={dataConversionMapping}
-                        originalVal={val1}
-                        getKey={getKey}
-                      />
-                    </TableCell>
-                  ))}
-                {/* </TableCell> */}
+                {values?.length
+                  ? values[values.length - 1].map((val1, index1) => (
+                      <TableCell style={{borderTop: "none"}}>
+                        <BasicSelect
+                          selectedValue={getUserFriendlyDataType(val1)}
+                          values={dataTypeMapping}
+                          handleChange={handleInput}
+                          index={index1}
+                          dataConversion={dataConversionMapping}
+                          originalVal={val1}
+                          getKey={getKey}
+                        />
+                      </TableCell>
+                    ))
+                  : ""}
               </TableRow>
             </TableHead>
             <TableBody>
-              {values?.length &&
-                values
-                  //   .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                  .map((row, index) => {
+              {values?.length
+                ? values.map((row, index) => {
                     return (
                       index !== values?.length - 1 && (
                         <TableRow hover role="checkbox" tabIndex={-1} key={row}>
@@ -266,19 +281,24 @@ function App() {
                         </TableRow>
                       )
                     );
-                  })}
+                  })
+                : ""}
             </TableBody>
           </Table>
         </TableContainer>
-        <TablePagination
-          rowsPerPageOptions={[10, 25, 100]}
-          component="div"
-          count={total}
-          rowsPerPage={rowsPerPage}
-          page={page}
-          onPageChange={handleChangePage}
-          onRowsPerPageChange={handleChangeRowsPerPage}
-        />
+        {total ? (
+          <TablePagination
+            rowsPerPageOptions={[10]}
+            component="div"
+            count={total}
+            rowsPerPage={rowsPerPage}
+            page={page}
+            onPageChange={handleChangePage}
+            onRowsPerPageChange={handleChangeRowsPerPage}
+          />
+        ) : (
+          ""
+        )}
       </Paper>
       {error && (
         <Alert
