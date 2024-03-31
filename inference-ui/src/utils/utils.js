@@ -1,9 +1,7 @@
 const dataTypeMapping = {
   object: "Text",
   int64: "Integer 64bits",
-  int32: "Integer 32bits",
   float64: "Float 64bits",
-  float32: "Float 32bits",
   "datetime64[ns]": "Date",
   complex128: "Complex",
   bool: "Boolean",
@@ -13,9 +11,9 @@ const dataTypeMapping = {
 const dataConversionMapping = {
   object: {
     int64: true,
-    int32: true,
+
     float64: true,
-    float32: true,
+
     "datetime64[ns]": true,
     complex128: true,
     bool: true,
@@ -24,26 +22,16 @@ const dataConversionMapping = {
   },
   int64: {
     object: true,
-    int32: true,
+
     int64: true,
     float64: true,
-    float32: true,
+
     "datetime64[ns]": true,
     complex128: true,
     bool: true,
     category: true,
   },
-  int32: {
-    object: true,
-    int32: true,
-    int64: true,
-    float64: true,
-    float32: true,
-    "datetime64[ns]": true,
-    complex128: true,
-    bool: true,
-    category: true,
-  },
+
   float64: {
     object: true,
     int32: true,
@@ -54,16 +42,7 @@ const dataConversionMapping = {
     bool: true,
     category: true,
   },
-  float32: {
-    object: true,
-    int32: true,
-    float64: true,
-    float32: true,
-    "datetime64[ns]": false,
-    complex128: true,
-    bool: true,
-    category: true,
-  },
+
   "datetime64[ns]": {
     object: true,
     int32: true,

@@ -1,9 +1,11 @@
 # Project Name: Data Processing Web Application
 
 ## Description
+
 This project is a web application developed using **Django** on the backend and **React** on the frontend. It allows users to upload CSV or Excel files, perform data processing operations such as editing data types of columns, and view the processed data in a table format.
 
 ## Features
+
 - Upload CSV or Excel files.
 - Edit data types of columns dynamically.
 - View processed data in a table format.
@@ -11,6 +13,7 @@ This project is a web application developed using **Django** on the backend and 
 - Error handling for invalid file uploads or data processing operations.
 
 ## Technologies Used
+
 - **Django** (Backend Framework)
 - **React** (Frontend Library)
 - **Axios** (HTTP client for making API requests)
@@ -20,6 +23,7 @@ This project is a web application developed using **Django** on the backend and 
 - **SQLite** (Database)
 
 ## Setup Instructions
+
 1. Clone the repository: `git clone https://github.com/jack4132/data-infer-app.git`
 2. Navigate to the backend directory: `cd backend`
 3. Install Python dependencies: `pip install -r requirements.txt`
@@ -30,6 +34,7 @@ This project is a web application developed using **Django** on the backend and 
 8. Start the React development server: `npm start`
 
 ## Usage
+
 1. Visit [http://localhost:3000/](http://localhost:3000/) in your web browser to access the application.
 2. Click on the "Upload" button to upload a CSV or Excel file.
 3. After uploading the file, you can view the data in a table format.
@@ -38,9 +43,11 @@ This project is a web application developed using **Django** on the backend and 
 6. Errors are displayed as alerts at the bottom of the page for any issues encountered during file upload or data processing.
 
 ## Backend Testing
+
 - Unit tests for the Django backend can be found in the `tests.py` file inside the `dataapp` directory.
 - To run the tests, navigate to the backend directory and execute `python manage.py test`.
 
 ## Frontend Testing
+
 - Unit tests for the frontend React components can be found in the `app.test.js` file inside the `frontend/src` directory.
 - To run the tests, navigate to the frontend directory and execute `npm test`.
